@@ -1,0 +1,44 @@
+/*
+10thMD S-2 Mission Template Version 1.0.0
+description.ext dated 08APR2015
+*/
+author = "10th Mountain Division";
+OnLoadMission = "1-32 INF Chosin | 10th CAB | 5th SFG";
+loadScreen = "images\loadscreen.jpg";
+onloadName = "Type of Mission Map Name V 1.0.0"; //Change this with every version, ex: "MCC Operations Altis V 1.1.0";
+onLoadIntroTime=false;
+onLoadMissionTime=false;
+class Header
+{
+	gameType = Coop;
+	minPlayers = 1;
+	maxPlayers = 80;
+};
+respawn = BASE;
+respawndelay = 1;
+RespawnDialog = 0;
+disabledAI = 1;
+joinUnassigned = 1;
+enabledebugconsole = 1;
+allowFunctionsLog = 1;
+showCompass = 1;
+showGPS = 1;
+showMap = 1; 
+
+//Above this point, nothing should change except for onLoadName.
+//Below this point, the additions for requirements for scripts should go here, following the previous ones.
+//Be sure to include the entire filepath, such as "scripts\ScriptFolder\filename.hpp" not just "ScriptFolder\filename.hpp"
+
+#include "CHVD\dialog.hpp"
+#include "R3F_LOG\desc_include.h"
+#include "VAS\menu.hpp"
+#include "vip_cmn\resource\vip_dlg_defaults.hpp"
+#include "vip_sms\resource\vip_sms_dlg.hpp"
+
+class CfgFunctions
+{
+	#include "CHVD\CfgFunctions.hpp"
+	#include "VAS\cfgfunctions.hpp"	
+	#include "vip_cmn\fn\vip_cmn_fnc.hpp"
+	#include "vip_sms\fn\vip_sms_fnc.hpp"
+};
